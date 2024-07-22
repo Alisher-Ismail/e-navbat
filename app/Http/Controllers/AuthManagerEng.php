@@ -8,15 +8,15 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Session;
 use Carbon\Carbon;
 
-class AuthManager extends Controller
+class AuthManagerEng extends Controller
 {
     
 
     function adminlogin(){
         if(Auth::check()){
-            return redirect()->intended(route('adminhome'));
+            return redirect()->intended(route('adminhomeeng'));
         }
-        return view('admin.login');
+        return view('english.login');
     }
 
     public function adminloginPost(Request $request)
@@ -31,17 +31,16 @@ class AuthManager extends Controller
             // Check if the user's muddat is greater than today's date
             $user = Auth::user();
             $userid = $user->id;
-           
-            return redirect()->intended(route('adminhome'));
+            return redirect()->intended(route('adminhomeeng'));
         }
 
-        return redirect(route('login'))->with('error', 'Email yoki Parol noto`g`ri');
+        return redirect(route('logineng'))->with('error', 'Email or Password Wrong');
     }
 
     function adminlogout(){
         Session::flush();
         Auth::logout();
-        return redirect(route('login'));
+        return redirect(route('logineng'));
     }
 
     //add user
@@ -51,7 +50,7 @@ class AuthManager extends Controller
         $userId =  $user->firmaid;
             
         $users = User::where('id', '!=', $userId)->where('type', 'admin')->get();
-        return view('admin.usersuper', compact('users'));
+        return view('english.usersuper', compact('users'));
     }
     
     public function user()
@@ -64,7 +63,7 @@ class AuthManager extends Controller
                 $userId = $user->firmaid;
             }
         $users = User::where('firmaid', $userId)->get();
-        return view('admin.user', compact('users'));
+        return view('english.user', compact('users'));
     }
 
     public function edit($id)
@@ -81,7 +80,7 @@ class AuthManager extends Controller
         $user = User::where('firmaid', $userId)->get();
     
         // Pass the about section to the view
-        return view('admin.useredit', compact('users', 'user'));
+        return view('english.useredit', compact('users', 'user'));
     }
     
     public function update(Request $request, $id)
@@ -108,7 +107,7 @@ class AuthManager extends Controller
         $user->save();
 
         // Redirect back with a success message
-        return redirect()->route('adminuser')->with('success', 'Muvaffaqiyatli Saqlandi.');    }
+        return redirect()->route('adminusereng')->with('success', 'Successfully Saved.');    }
 
     public function delete(Request $request, $id)
     {
@@ -118,14 +117,14 @@ class AuthManager extends Controller
          // Check if the about section exists
          if (!$user) {
             // If the about section does not exist, return a response
-            return redirect()->back()->with('error', 'Foydalanuvchi topilmadi.');
+            return redirect()->back()->with('error', 'Not Found.');
         }
 
         // Save the changes to the about section
         $user->delete();
 
         // Redirect back with a success message
-        return redirect()->route('adminuser')->with('success', 'Foydalanuvchi O`chirildi.');
+        return redirect()->route('adminusereng')->with('success', 'Deleted.');
         }
 
 
@@ -150,7 +149,7 @@ class AuthManager extends Controller
 
                 $userombor = User::where('email', $validatedData['email'])->where('firmaid', $userId)->first();
                 if($userombor){
-                    return redirect()->back()->withErrors(['error' => 'Foydalanuvchi Loginini O`zgatiring']);
+                    return redirect()->back()->withErrors(['error' => 'Change Login']);
                 }else{
                 // Create a new User model instance and save it to the database
                 User::create([
@@ -162,11 +161,11 @@ class AuthManager extends Controller
                     'password' => Hash::make($validatedData['parol']), // Hash the password
                 ]);
         
-                return redirect()->route('adminuser')->with('success', 'Muvaffaqiyatli Saqlandi.');
+                return redirect()->route('adminusereng')->with('success', 'Successfully Saved.');
             }
             } catch (\Exception $e) {
                 // Handle any errors that might occur
-                return redirect()->back()->withErrors(['error' => 'Xatolik']);
+                return redirect()->back()->withErrors(['error' => 'Error']);
             }
         }
     //add user

@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>E-Navbat</title>
+  <title>E-Appointment</title>
 
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
@@ -71,10 +71,12 @@
     <!-- Right navbar links -->
     <ul class="navbar-nav ml-auto">
       <!-- Navbar Search -->
+
+
       <!-- Messages Dropdown Menu -->
       <li class="nav-item dropdown">
         <a class="nav-link" data-toggle="dropdown" href="#">
-          Tilni Tanlash
+          Choose Language
         </a>
         <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
           <a href="{{route('adminhome')}}" class="dropdown-item">
@@ -107,16 +109,15 @@
             <!-- Message End -->
           </a>
       </li>
-    </ul>
   </nav>
   <!-- /.navbar -->
 
   <!-- Main Sidebar Container -->
   <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
-    <a href="{{ route('adminhome') }}" class="brand-link">
+    <a href="{{ route('adminhomeeng') }}" class="brand-link">
       <img src="{{asset('admin/dist/img/AdminLTELogo.jpg')}}" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .9">
-      <span class="brand-text font-weight-light">E-Navbat</span>
+      <span class="brand-text font-weight-light">E-Appointment</span>
     </a>
 
     <!-- Sidebar -->
@@ -126,7 +127,7 @@
         <div class="image">
         </div>
         <div class="info">
-        <a href="#" class="d-block">{{ auth()->user()->type }}</a>
+        <a href="#" class="d-block">{{ auth()->user()->name }}</a>
         </div>
       </div>
 
@@ -139,37 +140,37 @@
                with font-awesome or any other icon font library -->
          
           <li class="nav-item">
-            <a href="{{route('vaqt')}}" class="nav-link">
+            <a href="{{route('vaqteng')}}" class="nav-link">
               <i class="nav-icon fas fa-th"></i>
               <p>
-                Ish Vaqtlarini Kiritish
+                Enter Work Time
               </p>
             </a>
           </li>
 
           <li class="nav-item">
-            <a href="{{route('adminnavbat')}}" class="nav-link">
+            <a href="{{route('adminnavbateng')}}" class="nav-link">
               <i class="nav-icon fas fa-th"></i>
               <p>
-                Qabulni Tasdiqlash 
+                Confirm Appointment
               </p>
             </a>
           </li>
 
           <li class="nav-item">
-            <a href="{{route('adminnavbattasdiq')}}" class="nav-link">
+            <a href="{{route('adminnavbattasdiqeng')}}" class="nav-link">
               <i class="nav-icon fas fa-th"></i>
               <p>
-                Qabuldagilarni Ko`rish
+                View Confirmed
               </p>
             </a>
           </li>
 
           <li class="nav-item">
-            <a href="{{route('adminnavbatxizmat')}}" class="nav-link">
+            <a href="{{route('adminnavbatxizmateng')}}" class="nav-link">
               <i class="nav-icon fas fa-th"></i>
               <p>
-                Xizmat Ko`rsatilganlar
+                View Served
               </p>
             </a>
           </li>
@@ -205,7 +206,7 @@
           </li>
 -->
           <li class="nav-item">
-          <a class="nav-link" href="{{route('adminlogout')}}">
+          <a class="nav-link" href="{{route('adminlogouteng')}}">
                                 <i class="fas fa-sign-out-alt"></i>
                                 <p>Logout</p>
                             </a>

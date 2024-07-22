@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>E-Navbat</title>
+  <title>Электронная очередь</title>
 
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
@@ -74,7 +74,7 @@
       <!-- Messages Dropdown Menu -->
       <li class="nav-item dropdown">
         <a class="nav-link" data-toggle="dropdown" href="#">
-          Tilni Tanlash
+        Выбор языка
         </a>
         <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
           <a href="{{route('adminhome')}}" class="dropdown-item">
@@ -114,9 +114,9 @@
   <!-- Main Sidebar Container -->
   <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
-    <a href="{{ route('adminhome') }}" class="brand-link">
+    <a href="{{ route('adminhomeru') }}" class="brand-link">
       <img src="{{asset('admin/dist/img/AdminLTELogo.jpg')}}" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .9">
-      <span class="brand-text font-weight-light">E-Navbat</span>
+      <span class="brand-text font-weight-light">Электронная очередь".</span>
     </a>
 
     <!-- Sidebar -->
@@ -126,7 +126,7 @@
         <div class="image">
         </div>
         <div class="info">
-        <a href="#" class="d-block">{{ auth()->user()->type }}</a>
+        <a href="#" class="d-block">{{ auth()->user()->name }}</a>
         </div>
       </div>
 
@@ -139,75 +139,45 @@
                with font-awesome or any other icon font library -->
          
           <li class="nav-item">
-            <a href="{{route('vaqt')}}" class="nav-link">
+            <a href="{{route('vaqtru')}}" class="nav-link">
               <i class="nav-icon fas fa-th"></i>
               <p>
-                Ish Vaqtlarini Kiritish
+              Ввод времени работы
               </p>
             </a>
           </li>
 
           <li class="nav-item">
-            <a href="{{route('adminnavbat')}}" class="nav-link">
+            <a href="{{route('adminnavbatru')}}" class="nav-link">
               <i class="nav-icon fas fa-th"></i>
               <p>
-                Qabulni Tasdiqlash 
+              Подтверждение приема
               </p>
             </a>
           </li>
 
           <li class="nav-item">
-            <a href="{{route('adminnavbattasdiq')}}" class="nav-link">
+            <a href="{{route('adminnavbattasdiqru')}}" class="nav-link">
               <i class="nav-icon fas fa-th"></i>
               <p>
-                Qabuldagilarni Ko`rish
+              Посмотреть принятые
               </p>
             </a>
           </li>
 
           <li class="nav-item">
-            <a href="{{route('adminnavbatxizmat')}}" class="nav-link">
+            <a href="{{route('adminnavbatxizmatru')}}" class="nav-link">
               <i class="nav-icon fas fa-th"></i>
               <p>
-                Xizmat Ko`rsatilganlar
+              Предоставленные услуги
               </p>
             </a>
           </li>
-          <!--
+         
           <li class="nav-item">
-            <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-table"></i>
-              <p>
-                Tables
-                <i class="fas fa-angle-left right"></i>
-              </p>
-            </a>
-            <ul class="nav nav-treeview">
-              <li class="nav-item">
-                <a href="pages/tables/simple.html" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Simple Tables</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="pages/tables/data.html" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>DataTables</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="pages/tables/jsgrid.html" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>jsGrid</p>
-                </a>
-              </li>
-            </ul>
-          </li>
--->
-          <li class="nav-item">
-          <a class="nav-link" href="{{route('adminlogout')}}">
+          <a class="nav-link" href="{{route('adminlogoutru')}}">
                                 <i class="fas fa-sign-out-alt"></i>
-                                <p>Logout</p>
+                                <p>Выйти</p>
                             </a>
           </li>
         </ul>

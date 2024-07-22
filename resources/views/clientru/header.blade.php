@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>E-Navbat</title>
+  <title>Электронная очередь</title>
 
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
@@ -76,14 +76,14 @@
     <!-- Left navbar links -->
     <ul class="navbar-nav">
     <li class="nav-item d-none d-sm-inline-block">
-      <a href="{{route('qidiruv')}}" class="nav-link">Mutaxassislarni Topish</a>
+      <a href="{{route('qidiruvru')}}" class="nav-link">Поиск специалистов</a>
       </li>
       <li class="nav-item d-none d-sm-inline-block">
-        <a href="{{route('navbat.korish')}}" class="nav-link">Buyurtma Qilingan Qabul Vaqtini Tekshirish</a>
+        <a href="{{route('navbat.korishru')}}" class="nav-link">Проверка заказанного времени приема</a>
       </li>
 
       <li class="nav-item d-none d-sm-inline-block" style="float: right">
-        <a target="_blank" href="{{route('register')}}" class="nav-link">Mutaxassis Sifatida Registratsiydan O`tish</a>
+        <a target="_blank" href="{{route('registerru')}}" class="nav-link">Регистрация как специалист</a>
       </li>
     </ul>
 
@@ -94,7 +94,7 @@
       <!-- Messages Dropdown Menu -->
       <li class="nav-item dropdown">
         <a class="nav-link" data-toggle="dropdown" href="#">
-          Tilni Tanlash
+        Выбор языка
         </a>
         <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
           <a href="{{route('qidiruv')}}" class="dropdown-item">
